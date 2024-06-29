@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Recognition App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Plant Recognition App</h1>
+        <form method="post" enctype="multipart/form-data">
+            <div class="file-input-wrapper">
+                <input type="file" name="file" class="file-input" id="file">
+                <label for="file" class="file-label">Choose File</label>
+            </div>
+            <button type="submit" class="button">Upload Image</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <div id="result" class="result">
+            {{ result|safe }}
+        </div>
+    </div>
+    <div class="gif-overlay">
+        <img src="{{ url_for('static', filename='images/flower.gif') }}" alt="Flower GIF">
+    </div>
+</body>
+</html>

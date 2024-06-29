@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/floral-background.jpg');
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Make the background image fixed */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Start content from the top */
+    align-items: center;
+    height: 100vh;
+    text-align: center; /* Center text */
+}
+
+h1 {
+    color: #523b19;
+    font-family: cursive;
+    font-size: 64px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 15px 32px; /* Add some padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button inline-block */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Add some margin */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.button:active {
+    background-color: #3e8e41; /* Even darker green when clicked */
+    box-shadow: 0 5px #666; /* Add a shadow */
+    transform: translateY(4px); /* Slightly move the button down */
+}
+
+.file-input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 15px 32px; /* Add some padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button inline-block */
+    font-size: 16px; /* Increase font size */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.file-label:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.file-label:active {
+    background-color: #3e8e41; /* Even darker green when clicked */
+    box-shadow: 0 5px #666; /* Add a shadow */
+    transform: translateY(4px); /* Slightly move the button down */
+}
+
+.centered {
+    position: absolute;
+    top: 67%; /* Adjusted top position to create more space between GIF and content */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Ensure it is on top */
+}
+
+#result {
+    padding: 20px; /* Some padding */
+    word-wrap: break-word; /* Wrap long words */
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    color: steelblue;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px; /* Adjust font size for smaller screens */
+    }
+
+    .button, .file-label {
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .centered {
+        top: 60%; /* Adjust top position for smaller screens */
+    }
+
+    #result {
+        padding: 10px; /* Adjust padding for smaller screens */
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+}
+
+.gif-overlay {
+    position: fixed;
+    bottom: 10px; /* Position near the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 10;
+}
+
+.gif-overlay img {
+    width: 450px; /* Make the image bigger */
+    height: 450px; /* Maintain aspect ratio by setting width and height equally */
+}
